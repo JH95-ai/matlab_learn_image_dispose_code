@@ -1,0 +1,10 @@
+I=imread('pout.tif');
+figure;
+imshow(I);
+title('source');
+figure;
+imhist(I);
+title('Histogram');
+figure;
+imhist(I,64);
+title('Histogram_64')
