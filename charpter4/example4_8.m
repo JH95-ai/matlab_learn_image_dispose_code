@@ -1,0 +1,15 @@
+%读入基准图像和要配准的输入图像
+Iin=imread('D:\test_matlab\mh_gray.bmp');
+Ibase=imread('D:\精通matlab数字图像处理与识别书中源码\chapter10\lena.bmp');
+figure
+subplot(1,2,1),imshow(Iin);
+subplot(1,2,2),imshow(Ibase);
+%标注基准点对，并将其保存至工作空间
+cpselect(Iin,Ibase);
+%指定要使用的变换类型
+tform=cp2tform(movingPoints,fixedPoints,'affine');
+%根据变换结构对输入图像进行变换，完成基于基准点的对准
+Iout=imtransform(Iin,tform);
+figure
+subplot(1,2,1),imshow(Iout);
+subplot(1,2,2),imshow(Ibase);

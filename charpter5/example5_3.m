@@ -1,0 +1,14 @@
+I=imread('D:\精通matlab数字图像处理与识别书中源码\chapter5\baby_noise.bmp');
+figure,imshow(I);
+h3_5=fspecial('gaussian',3,0.5);%sigma=0.5的3*3高斯模板
+I3_5=imfilter(I,h3_5);%高斯平滑
+figure,imshow(I3_5);
+h3_8=fspecial('gaussian',3,0.8);%sigma=0.8的3*3高斯模板
+I3_8=imfilter(I,h3_8);
+figure,imshow(I3_8);
+h3_18=fspecial('gaussian',3,1.8);%sigma=0.8的3*3高斯模板
+I3_18=imfilter(I,h3_18);%sigma=1.8的3*3高斯模板,接近于平均模板
+figure,imshow(I3_18);
+h5_8=fspecial('gaussian',7,1.2);%sigma=0.8的5*5高斯模板
+I5_8=imfilter(I,h5_8);%sigma=1.8的3*3高斯模板,接近于平均模板
+figure,imshow(I5_8);

@@ -1,0 +1,12 @@
+I=imread('D:\精通matlab数字图像处理与识别书中源码\chapter5\bacteria.BMP');
+figure,imshow(I);
+I=double(I);
+w1=[0 -1 0;-1 4 -1;0 -1 0];
+L1=imfilter(I,w1,'corr','replicate');
+w2=[-1 -1 -1;-1 8 -1;-1 -1 -1];
+L2=imfilter(I,w2,'corr','replicate');
+figure,imshow(abs(L1),[]);
+figure,imshow(abs(L2),[]);
+w3=[1 4 1;4 -20 4;1 4 1];
+L3=imfilter(I,w3,'corr','replicate');
+figure,imshow(abs(L3),[]);
